@@ -24,7 +24,7 @@ module.exports = {
 
                     // Or array of paths
                     // resources: ["./src/assets/sass/variable.sass", "./src/assets/sass/hokori.sass"],
-                    resources: ["./src/assets/sass/hokori.sass"],
+                    resources: "./src/assets/sass/hokori.sass"
                 })
                 .end();
         });

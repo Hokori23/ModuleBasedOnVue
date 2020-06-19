@@ -1,24 +1,12 @@
-# modulebasedonvue
+# Module Based On Vue
 
-## Project setup
-```
-npm install
-```
+## Style Dependencies
+- Font Awesome
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Style Functions
+- [x] Spacing 间距类
+- [ ] Shadow 阴影类
+- [ ] Typography 排版类
+- [ ] Dark-mode 深色模式
+- [ ] Position 定位类
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
