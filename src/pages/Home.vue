@@ -1,32 +1,29 @@
 <template>
-  <div class="home">
-    <div class="block absolute_right_top"></div>
-  </div>
+  <section class="home mt_md">
+    <div class="text_center text_primary">404内部使用</div>
+    <section class="row jus_center mt_md">
+      <ul>
+        <li v-for="(item,i) of list" :key="'home_list_'+i">
+          {{item.name}}
+        </li>
+      </ul>
+    </section>
+  </section>
 </template>
 
 <script>
 // @ is an alias to /src
 export default {
-  name: "Home",
-  data() {
-    return {
-      position: [
-        "position_bottom",
-        "position_center_bottom",
-        "position_left_bottom",
-        "position_right_bottom"
-      ]
-    };
+  name: "home",
+  computed: {
+    list() {
+      return this.$router.options.routes[0].children;
+    }
   }
 };
 </script>
 <style lang="sass" scoped>
 .home
   width: 100%
-  height: 100%
-
-.block
-  background-color: red
-  width: 50px
-  height: 50px
+  min-height: 100%
 </style>

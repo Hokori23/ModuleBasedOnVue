@@ -1,4 +1,15 @@
+/**********************************************************************************
+ **********************************************************************************
+     
+     
+ *      此文件请勿格式化，@include后的普通css属性缩进量可能会异常导致报错
+     
+     
+ **********************************************************************************
+ **********************************************************************************/
 
+    
+    
 /************************************************
  * Common
  * 
@@ -18,11 +29,11 @@ html,body
  * 
  ************************************************/
 
-@mixin h-translate_x_center
+@mixin translate_x_center
     left: 50%
     transform: translate3d(-50%,0,0)
 
-@mixin h-translate_y_center
+@mixin translate_y_center
     top: 50%
     transform: translate3d(0,-50%,0)
 
@@ -32,18 +43,18 @@ html,body
  * 
  ************************************************/
 
-@mixin h-position_top
+@mixin position_top
     top: 0
 
-@mixin h-position_top_center
-    @include h-translate_x_center
+@mixin position_top_center
+    @include translate_x_center
     top: 0
 
-@mixin h-position_top_left
+@mixin position_top_left
     left: 0
     top: 0
 
-@mixin h-position_top_right
+@mixin position_top_right
     right: 0
     top: 0
 
@@ -53,21 +64,21 @@ html,body
  * 
  ************************************************/
 
-@mixin h-position_middle
-    @include h-translate_y_center
+@mixin position_middle
+    @include translate_y_center
     top: 0
 
-@mixin h-position_center
-    @include h-translate_x_center
-    @include h-translate_y_center
+@mixin position_center
+    @include translate_x_center
+    @include translate_y_center
     transform: translate3d(-50%,-50%,0)
 
-@mixin h-position_middle_left
-    @include h-translate_y_center
+@mixin position_middle_left
+    @include translate_y_center
     left: 0
 
-@mixin h-position_middle_right
-    @include h-translate_y_center
+@mixin position_middle_right
+    @include translate_y_center
     right: 0
 
 
@@ -76,18 +87,18 @@ html,body
  * 
  ************************************************/
 
-@mixin h-position_bottom
+@mixin position_bottom
     bottom: 0
 
-@mixin h-position_bottom_center
-    @include h-translate_x_center
+@mixin position_bottom_center
+    @include translate_x_center
     bottom: 0
 
-@mixin h-position_bottom_left
+@mixin position_bottom_left
     left: 0
     bottom: 0
 
-@mixin h-position_bottom_right
+@mixin position_bottom_right
     right: 0
     bottom: 0
 
@@ -103,41 +114,41 @@ html,body
 /** top */
 .fixed_center_top
     @extend .fixed
-    @include h-position_top_center
+    @include position_top_center
 
 .fixed_left_top
     @extend .fixed
-    @include h-position_top_left
+    @include position_top_left
 
 .fixed_right_top
     @extend .fixed
-    @include h-position_top_right
+    @include position_top_right
 
 /** middle */
 .fixed_center
     @extend .fixed
-    @include h-position_center
+    @include position_center
 
 .fixed_middle_left
     @extend .fixed
-    @include h-position_middle_left
+    @include position_middle_left
 
 .fixed_middle_right
     @extend .fixed
-    @include h-position_middle_right
+    @include position_middle_right
 
 /** bottom */
 .fixed_bottom_center
     @extend .fixed
-    @include h-position_bottom_center
+    @include position_bottom_center
 
 .fixed_bottom_left
     @extend .fixed
-    @include h-position_bottom_left
+    @include position_bottom_left
 
 .fixed_bottom_right
     @extend .fixed
-    @include h-position_bottom_right
+    @include position_bottom_right
 
 
 /************************************************
@@ -151,41 +162,41 @@ html,body
 /** top */
 .relative_center_top
     @extend .relative
-    @include h-position_top_center
+    @include position_top_center
 
 .relative_left_top
     @extend .relative
-    @include h-position_top_left
+    @include position_top_left
 
 .relative_right_top
     @extend .relative
-    @include h-position_top_right
+    @include position_top_right
 
 /** middle */
 .relative_center
     @extend .relative
-    @include h-position_center
+    @include position_center
 
 .relative_middle_left
     @extend .relative
-    @include h-position_middle_left
+    @include position_middle_left
 
 .relative_middle_right
     @extend .relative
-    @include h-position_middle_right
+    @include position_middle_right
 
 /** bottom */
 .relative_bottom_center
     @extend .relative
-    @include h-position_bottom_center
+    @include position_bottom_center
 
 .relative_bottom_left
     @extend .relative
-    @include h-position_bottom_left
+    @include position_bottom_left
 
 .relative_bottom_right
     @extend .relative
-    @include h-position_bottom_right
+    @include position_bottom_right
 
 
 
@@ -202,40 +213,55 @@ html,body
 /** top */
 .absolute_center_top
     @extend .absolute
-    @include h-position_top_center
+    @include position_top_center
 
 .absolute_left_top
     @extend .absolute
-    @include h-position_top_left
+    @include position_top_left
 
 .absolute_right_top
     @extend .absolute
-    @include h-position_top_right
+    @include position_top_right
 
 /** middle */
 .absolute_center
     @extend .absolute
-    @include h-position_center
+    @include position_center
 
 .absolute_middle_left
     @extend .absolute
-    @include h-position_middle_left
+    @include position_middle_left
 
 .absolute_middle_right
     @extend .absolute
-    @include h-position_middle_right
+    @include position_middle_right
 
 /** bottom */
 .absolute_bottom_center
     @extend .absolute
-    @include h-position_bottom_center
+    @include position_bottom_center
 
 .absolute_bottom_left
     @extend .absolute
-    @include h-position_bottom_left
+    @include position_bottom_left
 
 .absolute_bottom_right
     @extend .absolute
-    @include h-position_bottom_right
+    @include position_bottom_right
 
 
+.float_left
+    float: left
+
+.float_right
+    float: right
+
+.clear_pseudo::after
+    content: ''
+    clear: both
+    display: block
+    height: 0
+    visibility: hidden
+
+.clear_ele
+    clear: both

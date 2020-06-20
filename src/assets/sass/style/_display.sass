@@ -31,20 +31,33 @@
     display: -webkit-box
     -webkit-box-orient: vertical
 
-@media screen and (  min-width:1px  ) and ( max-width:599px  )
+@media screen and (  min-width:1px  ) and ( max-width:$xs  )
     .sm,
     .md,
     .lg,
     .xl,
     .gt-xs,
+    .gt-sm,
     .gt-md,
     .gt-lg,
     .gt-xl,
         display: none
         
-@media screen and (  min-width:600px  ) and ( max-width:1023px  )
+@media screen and (  min-width:$xs+1  ) and ( max-width:$sm  )
     .xs,
     .md,
+    .lg,
+    .xl,
+    .gt-sm,
+    .gt-md,
+    .gt-lg,
+    .gt-xl,
+    .lt-xs
+        display: none
+        
+@media screen and (  min-width:$sm+1  ) and ( max-width:$md  )
+    .xs,
+    .sm,
     .lg,
     .xl,
     .gt-md,
@@ -54,30 +67,24 @@
     .lt-md
         display: none
         
-@media screen and (  min-width:1024px  ) and ( max-width:1439px  )
-    .xs,
-    .sm,
-    .lg,
-    .xl,
-    .gt-lg,
-    .gt-xl,
-    .lt-xs,
-    .lt-md,
-    .lt-lg
-        display: none
-        
-@media screen and (  min-width:1440px  ) and ( max-width:1919px  )
+@media screen and (  min-width:$md+1  ) and ( max-width:$lg  )
     .xs,
     .sm,
     .md,
     .xl,
+    .gt-lg,
+    .gt-xl,
+    .lt-xs,
+    .lt-md
+        display: none
+        
+@media screen and (  min-width:$lg+1  )
+    .xs,
+    .sm,
+    .md,
+    .lg,
     .gt-xl,
     .lt-xs,
     .lt-md,
     .lt-lg,
-    .lt-xl
-        display: none
-        
-@media screen and (  min-width:1920px  )
-    .xs,.sm,.md,.lg
         display: none
