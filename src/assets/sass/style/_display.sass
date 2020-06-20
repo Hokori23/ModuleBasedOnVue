@@ -1,0 +1,83 @@
+.hidden
+    display: none
+
+.invisible
+    visibility: hidden
+
+
+.dimmed:after
+    background: rgba(0,0,0,0.4)!important
+.light-dimmed:after
+    background: hsla(0,0%,100%,0.6)!important
+.dimmed:after, .light-dimmed:after
+    content: ""
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+
+.ellipsis
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+.ellipsis-2-lines 
+    -webkit-line-clamp: 2
+.ellipsis-3-lines 
+    -webkit-line-clamp: 3
+.ellipsis-2-lines, .ellipsis-3-lines 
+    overflow: hidden
+    display: -webkit-box
+    -webkit-box-orient: vertical
+
+@media screen and (  min-width:1px  ) and ( max-width:599px  )
+    .sm,
+    .md,
+    .lg,
+    .xl,
+    .gt-xs,
+    .gt-md,
+    .gt-lg,
+    .gt-xl,
+        display: none
+        
+@media screen and (  min-width:600px  ) and ( max-width:1023px  )
+    .xs,
+    .md,
+    .lg,
+    .xl,
+    .gt-md,
+    .gt-lg,
+    .gt-xl,
+    .lt-xs,
+    .lt-md
+        display: none
+        
+@media screen and (  min-width:1024px  ) and ( max-width:1439px  )
+    .xs,
+    .sm,
+    .lg,
+    .xl,
+    .gt-lg,
+    .gt-xl,
+    .lt-xs,
+    .lt-md,
+    .lt-lg
+        display: none
+        
+@media screen and (  min-width:1440px  ) and ( max-width:1919px  )
+    .xs,
+    .sm,
+    .md,
+    .xl,
+    .gt-xl,
+    .lt-xs,
+    .lt-md,
+    .lt-lg,
+    .lt-xl
+        display: none
+        
+@media screen and (  min-width:1920px  )
+    .xs,.sm,.md,.lg
+        display: none
