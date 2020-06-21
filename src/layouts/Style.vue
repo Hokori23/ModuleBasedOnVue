@@ -1,14 +1,14 @@
 <template>
   <section>
-    Style
+    StyleLayout
     <router-view />
   </section>
 </template>
 <script>
 export default {
-  name: "style",
+  name: "StyleLayout",
   mounted() {
-    console.log("style");
+    console.log("style layout");
   }
 };
 </script>

@@ -1,2 +1,203 @@
 .h-btn
+    padding: 4px 16px
+    min-height: 2.572em
+    display: inline-flex
+    flex-direction: column
+    align-items: stretch
+    position: relative
+    outline: 0
+    border: 0
+    vertical-align: middle
+    font-size: 14px
+    line-height: 1.715em
+    text-decoration: none
+    color: inherit
+    font-weight: 500
+    text-align: center
+    width: auto
+    height: auto
+    align-self: center
+    background: transparent
+    cursor: pointer
+    transition: transform .1s
+    border-radius: 3px
+
+.h-btn::after
+    z-index: -1
+    content: ""
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    display: block
+    border-radius: inherit
+    transition: box-shadow .2s,background-color .2s
+
+.h-btn:not(.h-btn_round):not(.h-btn_rounded)
+    justify-content: center
+
+
+
+
+/************************************************************************
+ ************************************************************************
+ ************************************************************************
+ *
+ *                          h-btn_color
+ *
+ ************************************************************************
+ ************************************************************************
+ ************************************************************************/
+
+
+
+
+/************************************
+ *
+ *          flat
+ *
+ ************************************/
+
+.h-btn.h-btn_flat
+    background: transparent
+    &::after
+        opacity: .6
+
+.h-btn.h-btn_flat.h-btn_primary
+    &:hover::after
+        background-color: $primary
+.h-btn.h-btn_flat.h-btn_secondary
+    &:hover::after
+        background-color: $secondary
+.h-btn.h-btn_flat.h-btn_accent
+    &:hover::after
+        background-color: $accent
+.h-btn.h-btn_flat.h-btn_dark
+    &:hover::after
+        background-color: $dark
+.h-btn.h-btn_flat.h-btn_positive
+    &:hover::after
+        background-color: $positive
+.h-btn.h-btn_flat.h-btn_negative
+    &:hover::after
+        background-color: $negative
+.h-btn.h-btn_flat.h-btn_info
+    &:hover::after
+        background-color: $info
+.h-btn.h-btn_flat.h-btn_warning
+    &:hover::after
+        background-color: $warning
+
+
+
+
+/************************************
+ *
+ *          not flat
+ *
+ ************************************/
+
+.h-btn.h-btn_primary:not(.h-btn_flat)
+    background-color: $primary
+.h-btn.h-btn_secondary:not(.h-btn_flat)
+    background-color: $secondary
+.h-btn.h-btn_accent:not(.h-btn_flat)
+    background-color: $accent
+.h-btn.h-btn_dark:not(.h-btn_flat)
+    background-color: $dark
+.h-btn.h-btn_positive:not(.h-btn_flat)
+    background-color: $positive
+.h-btn.h-btn_negative:not(.h-btn_flat)
+    background-color: $negative
+.h-btn.h-btn_info:not(.h-btn_flat)
+    background-color: $info
+.h-btn.h-btn_warning:not(.h-btn_flat)
+    background-color: $warning
+
+.h-btn
+    &:hover
+        transform: translate3d(0,-5%,0)
+    &:hover::after
+        @extend .shadow-3
+    &:active        
+        transform: translate3d(0,3%,0)
+    &:active::after
+        @extend .no-shadow
+
+
+
+
+
+
+
+
+
+
+/************************************************************************
+ ************************************************************************
+ ************************************************************************
+ *
+ *                          h-btn_outline
+ *
+ ************************************************************************
+ ************************************************************************
+ ************************************************************************/
+
+.h-btn.h-btn_outline
+    &::after
+        border-width: 1px
+        border-style: solid
     
+
+.h-btn.h-btn_outline.h-btn_primary
+    &::after
+        border-color: $primary
+.h-btn.h-btn_outline.h-btn_secondary
+    &::after
+        border-color: $secondary
+.h-btn.h-btn_outline.h-btn_accent
+    &::after
+        border-color: $accent
+.h-btn.h-btn_outline.h-btn_dark
+    &::after
+        border-color: $dark
+.h-btn.h-btn_outline.h-btn_positive
+    &::after
+        border-color: $positive
+.h-btn.h-btn_outline.h-btn_negative
+    &::after
+        border-color: $negative
+.h-btn.h-btn_outline.h-btn_info
+    &::after
+        border-color: $info
+.h-btn.h-btn_outline.h-btn_warning
+    &::after
+        border-color: $warning
+
+
+
+
+/************************************
+ *
+ *          border-radius
+ *
+ ************************************/
+.h-btn.h-btn_rounded
+    border-radius: 28px
+
+.h-btn.h-btn_round
+    border-radius: 50%
+
+.h-btn.h-btn_uppercase
+    text-transform: uppercase
+
+.h-btn.h-btn_capitalize
+    text-transform: capitalize
+
+.h-btn.h-btn_empty
+    padding: 0
+    height: 36px
+    width: 36px

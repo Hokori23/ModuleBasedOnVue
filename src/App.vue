@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="px_sm gt-sm">
+  <div id="app">
     <div
       class="
       row
