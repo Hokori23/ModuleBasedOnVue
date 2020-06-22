@@ -9,14 +9,17 @@
         <li>
           <router-link to="/components">Components</router-link>
         </li>
-      </ul> -->
+      </ul>-->
     </section>
     <div class="display">
-      <h-btn flat outline color="secondary" text-color="black">button</h-btn>
+      <h-btn flat outline color="secondary" text-color="black" prepend="adobe">
+        button
+      </h-btn>
       <h-btn outline rounded color="warning">button</h-btn>
       <h-btn capitalize color="primary">button</h-btn>
       <h-btn rounded color="negative"></h-btn>
     </div>
+    <i class="fab fa-adobe" style="width:100px;height:100px"></i>
     <!-- <router-view /> -->
   </section>
 </template>

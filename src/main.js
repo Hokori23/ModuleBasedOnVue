@@ -1,16 +1,29 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import store from './store/'
-import router from './router'
-import animate from 'animate.css'
+import Vue from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import store from "./store/";
+import router from "./router";
+
+//Animate.css
+import animate from "animate.css";
 Vue.use(animate);
 
+//FontAwesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+library.add(fas);
+library.add(far);
+library.add(fab);
 
-Vue.config.productionTip = false
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+Vue.config.productionTip = false;
 
 new Vue({
     router,
     store,
-    render: h => h(App),
-}).$mount('#app')
+    render: (h) => h(App),
+}).$mount("#app");

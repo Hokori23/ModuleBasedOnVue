@@ -1,8 +1,15 @@
 <template>
-  <button :class="classObject">
-    <div>
+  <button :class="contentClass">
+    <!-- prepend -->
+    <div class="mx-sm">
+      <i :class="icons.prepend"></i>
+    </div>
+    <!-- default -->
+    <div v-if="$slots.default">
       <slot></slot>
     </div>
+    <!-- append -->
+    <div></div>
   </button>
 </template>
 <script>
@@ -23,6 +30,10 @@ export default {
       type: Boolean,
       default: false
     },
+    float: {
+      type: Boolean,
+      default: false
+    },
     color: {
       type: String,
       default: "primary"
@@ -31,15 +42,13 @@ export default {
       type: String,
       default: "white"
     },
-    float: {
-      type: Boolean,
-      default: false
-    }
+    prepend: String,
+    append: String
   },
   name: "h-btn",
   computed: {
-    classObject() {
-      let obj = {
+    contentClass() {
+      return {
         "h-btn": true,
         "h-btn_round": this.round,
         "h-btn_rounded": this.rounded && !this.round,
@@ -47,20 +56,21 @@ export default {
         "h-btn_outline": this.outline && this.flat,
         "h-btn_uppercase": this.uppercase && !this.capitalize,
         "h-btn_capitalize": this.capitalize,
-        "h-btn_empty": !Boolean(this.$slots.default)
+        "h-btn_empty": !Boolean(this.$slots.default),
+        [`h-btn_${this.color}`]: this.color,
+        [`text_${this.textColor}`]: this.textColor
       };
-      this.color && (obj[this.temColor] = true);
-      this.textColor && (obj[this.temTextColor] = true);
-      return obj;
     },
-    temColor() {
-      return `h-btn_${this.color}`;
-    },
-    temTextColor() {
-      return `text_${this.textColor}`;
+    icons() {
+      return {
+        prepend: `fab h-icon fa-${this.prepend}`,
+        append:`fab h-icon fa-${this.append}`,
+      };
     }
   },
-  mounted() {}
+  mounted() {
+    console.log(this.$slots);
+  }
 };
 </script>
 <style lang="sass">

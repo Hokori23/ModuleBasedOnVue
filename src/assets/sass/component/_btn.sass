@@ -21,20 +21,36 @@
     cursor: pointer
     transition: transform .1s
     border-radius: 3px
+    &:active        
+        transform: translate3d(0,3%,0)
+    &::before,&::after
+        content: ""
+        position: absolute
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        display: block
+        border-radius: inherit
+    &:active::before
+        z-index: -1
+        background-color: rgba(0,0,0,.15)
+        transition: background-color .2s
+    &:hover
+        transform: translate3d(0,-5%,0)
 
-.h-btn::after
-    z-index: -1
-    content: ""
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    width: 100%
-    height: 100%
-    display: block
-    border-radius: inherit
-    transition: box-shadow .2s,background-color .2s
+
+    &::after
+        z-index: -2
+        transition: box-shadow .2s,background-color .2s
+    &:hover::after
+        @extend .shadow-3
+    &:active::after
+        @extend .no-shadow
+
+
 
 .h-btn:not(.h-btn_round):not(.h-btn_rounded)
     justify-content: center
@@ -116,16 +132,6 @@
     background-color: $info
 .h-btn.h-btn_warning:not(.h-btn_flat)
     background-color: $warning
-
-.h-btn
-    &:hover
-        transform: translate3d(0,-5%,0)
-    &:hover::after
-        @extend .shadow-3
-    &:active        
-        transform: translate3d(0,3%,0)
-    &:active::after
-        @extend .no-shadow
 
 
 
